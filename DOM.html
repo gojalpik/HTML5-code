@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM</title>
+</head>
+<body>
+	<h4 id="h">My Hobbies</h4>
+<ol id="myList">
+  <li>Internet</li>
+  <li>Music</li>
+</ol>
+
+
+<button onclick="myFunction()">Insert more hobbies</button>
+
+<script>
+function myFunction() {
+  var node = document.createElement("LI");
+  var textnode = document.createTextNode("Web Technologies");
+  node.appendChild(textnode);
+  document.getElementById("myList").appendChild(node);
+    document.getElementById("h").style.color="red";
+
+}
+</script>
+</body>
+</html>
