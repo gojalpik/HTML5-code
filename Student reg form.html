@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>SRF</title>
+</head>
+<body>
+	<style type="text/css">
+		table, th, td {
+  border: 1px solid black;
+}
+tr{
+	text-align: center;
+}
+
+</style>
+
+<form >
+<table border="1" align="center" width="400" bgcolor="#CCCCCC" >
+<caption>Registration form</caption>
+<tr>
+<th>Name</th>
+<td><input type="text" name="n"/></td>
+</tr>
+<tr>
+<th>DOB</th>
+<td><input type="date"/></td>
+</tr>
+<tr>
+<th>Gender</th>
+<td>
+Male<input type="radio" name="g" value="m"/>
+Female<input type="radio" name="g" value="f"/>
+</td>
+</tr>
+<tr>
+<th>Email-Id</th>
+<td><input type="email"/></td>
+</tr>
+<tr>
+<th>Mobile number</th>
+<td><input type="number"/></td>
+</tr>
+<tr>
+<th>Address</th>
+<td><textarea rows="5" cols="22"></textarea></td>
+</tr>
+<tr>
+<th>City</th>
+<td><input type="text" name="c"/></td>
+</tr>
+<tr>
+<th>Pincode</th>
+<td><input type="text" name="p"/></td>
+</tr>
+<tr>
+<th>State</th>
+<td><input type="text" name="s"/></td>
+</tr>
+<tr>
+<th>Country</th>
+<td>
+<select name="country">
+<option value="" selected="selected" disabled="disabled">Select your country</option>
+<option value="1">India</option>
+<option value="2">Pakistan</option>
+</select>
+</td>
+</tr>
+<tr>
+<th>Hobbies</th>
+<td>
+Playing<input type="checkbox" name="" value="h"/>
+Reading<input type="checkbox" name="" value="h2"/>
+</td>
+</tr>
+<tr>
+	<td>
+<table align="center" id="tt">
+  <tr>
+    <th>Education</th>
+    <th>Board</th> 
+    <th>Percentage</th>
+    <th>Year of Passing</th>
+
+  </tr>
+  <tr>
+    <td>SREC</td>
+    <td>Autonomus</td>
+    <td>8.97</td>
+    <td>2021</td>
+  </tr>
+ 
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2" align="center"><input type="submit" value="Submit"/>
+<input type="reset" value="Reset"/>
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

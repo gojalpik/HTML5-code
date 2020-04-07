@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>button</title>
+	<script type="text/javascript">
+		function mag(){
+			var a=document.getElementsByTagName('P');
+			alert
+			for(var i=0;i<a.length;i++){
+				document.getElementsByTagName('P')[i].style.textAlign="center";
+				document.getElementsByTagName('P')[i].style.border="dotted red";
+			}
+
+		}
+		function mir(){
+	var a=document.getElementsByClassName('abc');
+			for(var i=0;i<a.length;i++){
+var node=document.createElement("P");
+var tnode=document.createTextNode("NEW PARA");
+node.appendChild(tnode);
+document.getElementsByClassName('abc')[i].innerHTML="<u>NEW HEADING</u>";
+document.getElementsByClassName('abc')[i].appendChild(node);
+		}
+	}
+	</script>
+</head>
+<body>
+	<h2 class="abc">I am level2 heading tag</h2>
+	<p>I am para 1</p>
+	<h1>I am Heading 1</h1>
+	<p>I am para 2</p>
+	<h1>I am Heading 2</h1>
+    <b class="abc">I am bold tag</b>
+    <input type="button" name="" value="Magic" id="b1" onclick="mag()"/>
+        <input type="button" name="" value="Miracle" id="b2" onclick="mir()"/>
+
+	</body>
+</html>
