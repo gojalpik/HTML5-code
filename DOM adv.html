@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom</title>
+    <script type="text/javascript">
+    	function addItem(){
+    var ol = document.getElementById("dynamic-list");
+    var candidate = document.getElementById("candidate");
+    var li = document.createElement("li");
+    li.setAttribute('id',candidate.value);
+    li.appendChild(document.createTextNode(candidate.value));
+    ol.appendChild(li);
+        document.getElementById("h").style.color="red";
+
+}
+
+    </script>
+    
+</head>
+<body>
+	<h4 id="h">My Hobbies</h4>
+
+    <ol id="dynamic-list">
+    	 <li>Internet</li>
+  <li>Music</li>
+    </ol>
+
+    <input type="text" id="candidate"/>
+    <button onclick="addItem()">Insert more hobbies</button>
+
+</body>
+</html>
