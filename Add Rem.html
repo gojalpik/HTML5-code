@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Add Rem</title>
+</head>
+<body>
+    <div id="main">
+<table class="aaa" id="tab" width="450px">
+    <tr>
+        <td>AAA</td>
+    </tr><br>
+    <tr>
+        <td>AAA</td>
+    </tr>
+    <tr>
+        <td>AAA</td>
+    </tr>
+    <tr>
+        <td>AAA</td>
+    </tr><br>
+</table>
+    <hr>
+<table >
+<tr>
+    <td><input type= "button"id="abv" style="width:100px" onclick="abv()" value="add row above"></button></td>
+    <td><input type= "button" id="blw"style="width:115px" onclick="blw()" value="add row below"></button><br></td>
+</tr>
+<tr>
+    <td><input type= "button" id="bdr" style="width:100px" onclick="bdr()" value="add border"></button></td>
+    <td><input type= "button" id="clr"style="width:115px" onclick="clr()" value="change text color"></button></td>
+</tr>
+<tr>
+    <td><input type= "button" id="rmw" style="width:100px" onclick="rmv()" value="remove row"></button></td>
+    <td><input type= "button" id="all"style="width:115px" onclick="removeall()" value="remove all"></button></td>
+</tr>
+</table>
+<script type="text/javascript">
+    function abv(){
+        var table=document.getElementById("tab");
+        var row=table.insertRow(0);
+        var cell=row.insertCell(0);
+        cell.innerHTML="BBB";
+    }
+    function blw(){
+        var table=document.getElementById("tab");
+        var row=table.insertRow(-1);
+        var cell=row.insertCell(0);
+        cell.innerHTML="CCC";
+    }
+    function bdr(){
+        document.getElementById("tab").style.border="solid red";
+        
+    }
+    function clr(){
+        document.getElementById("tab").style.color="blue";
+        
+    }
+    function rmv(){
+        document.getElementById("tab").deleteRow(-1);
+        
+    }
+   function removeall(){
+       var tab= document.getElementById("tab");
+        var rowCount=tab.rows.length;
+        for(var i=rowCount-1;i>-1;i--){
+            tab.deleteRow(i);
+        }
+    }
+
+
+
+    
+</script>
+</div>
+
+
+
+
+
+
+</body>
+</html>
