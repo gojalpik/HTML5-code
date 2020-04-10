@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Push Pop</title>
+
+    <style>
+        table {
+            font: 18px cursive;
+        }
+        table, th, td {
+            border: solid 2px brown;
+            border-collapse: collapse;
+            padding: 2px 3px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body onload="Table()">
+    <h1>Student Details</h1>
+    <p>
+        <input type="button" id="add" value="Add" onclick="add()" />
+    </p>
+
+    <div id="cont"></div>
+
+</body>
+
+<script>
+    
+    var arr = new Array();
+    arr = ['', 'Student Name', 'Department', 'RollNo'];      
+
+    function Table() {
+        var Table = document.createElement('table');
+        Table.setAttribute('id', 'Table');           
+
+        var tr = Table.insertRow(-1);
+
+        for (var h = 0; h < arr.length; h++) {
+            var th = document.createElement('th');          
+            th.innerHTML = arr[h];
+            tr.push(th);
+        }
+
+        var div = document.getElementById('cont');
+        div.push(Table);   
+    }
+
+    function add() {
+        var Tab = document.getElementById('Table');
+
+        var rowCnt = Tab.rows.length;        
+        var tr = Tab.insertRow(rowCnt);      
+        tr = Tab.insertRow(rowCnt);
+
+        for (var c = 0; c < arr.length; c++) {
+            var td = document.createElement('td');          
+            td = tr.insertCell(c);
+
+            if (c == 0) {           
+                var button = document.createElement('input');
+
+                button.setAttribute('type', 'button');
+                button.setAttribute('value', 'Remove');
+
+                button.setAttribute('onclick', 'removeRow(this)');
+
+                td.push(button);
+            }
+            else {
+                var ele = document.createElement('input');
+                ele.setAttribute('type', 'text');
+                ele.setAttribute('value', '');
+
+                td.push(ele);
+            }
+        }
+    }
+
+    function removeRow(oButton) {
+        var Tab = document.getElementById('Table');
+        Tab.pop(oButton.parentNode.parentNode.rowIndex);       
+    }
+
+   
+        
+            
+</script>
+</html>
