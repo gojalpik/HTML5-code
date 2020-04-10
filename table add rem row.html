@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Push Pop</title>
+    <title>PP</title>
 
     <style>
         table {
-            font: 18px cursive;
+            width: 100%;
+            font: 17px cursive;
         }
         table, th, td {
             border: solid 2px brown;
@@ -15,10 +16,9 @@
         }
     </style>
 </head>
-<body onload="Table()">
-    <h1>Student Details</h1>
+<body onload="createTable()">
     <p>
-        <input type="button" id="add" value="Add" onclick="add()" />
+        <input type="button" id="addRow" value="Add" onclick="addRow()" />
     </p>
 
     <div id="cont"></div>
@@ -26,38 +26,37 @@
 </body>
 
 <script>
-    
     var arr = new Array();
-    arr = ['', 'Student Name', 'Department', 'RollNo'];      
+    arr = ['', 'Name', 'Department', 'RollNo'];     
+    function createTable() {
+        var sTable = document.createElement('table');
+        sTable.setAttribute('id', 'sTable');           
 
-    function Table() {
-        var Table = document.createElement('table');
-        Table.setAttribute('id', 'Table');           
-
-        var tr = Table.insertRow(-1);
+        var tr = sTable.insertRow(-1);
 
         for (var h = 0; h < arr.length; h++) {
             var th = document.createElement('th');          
             th.innerHTML = arr[h];
-            tr.push(th);
+            tr.appendChild(th);
         }
 
         var div = document.getElementById('cont');
-        div.push(Table);   
+        div.appendChild(sTable);   
     }
 
-    function add() {
-        var Tab = document.getElementById('Table');
+    
+    function addRow() {
+        var sTab = document.getElementById('sTable');
 
-        var rowCnt = Tab.rows.length;        
-        var tr = Tab.insertRow(rowCnt);      
-        tr = Tab.insertRow(rowCnt);
+        var rowCnt = sTab.rows.length;        
+        var tr = sTab.insertRow(rowCnt);      
+        tr = sTab.insertRow(rowCnt);
 
         for (var c = 0; c < arr.length; c++) {
             var td = document.createElement('td');          
             td = tr.insertCell(c);
 
-            if (c == 0) {           
+            if (c == 0) {                          
                 var button = document.createElement('input');
 
                 button.setAttribute('type', 'button');
@@ -65,25 +64,24 @@
 
                 button.setAttribute('onclick', 'removeRow(this)');
 
-                td.push(button);
+                td.appendChild(button);
             }
             else {
                 var ele = document.createElement('input');
                 ele.setAttribute('type', 'text');
                 ele.setAttribute('value', '');
 
-                td.push(ele);
+                td.appendChild(ele);
             }
         }
     }
 
     function removeRow(oButton) {
-        var Tab = document.getElementById('Table');
-        Tab.pop(oButton.parentNode.parentNode.rowIndex);       
+        var sTab = document.getElementById('sTable');
+        sTab.deleteRow(oButton.parentNode.parentNode.rowIndex);       
     }
 
    
-        
-            
+    
 </script>
 </html>
